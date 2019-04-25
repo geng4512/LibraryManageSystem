@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}结果{% endblock %}
+{% block content %}
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>用户昵称</th>
+                <th>  打分  </th>
+                <th>评论内容</th>
+            </tr>
+            </thead>
+            {%for rev in reviewlist%}
+                <tr>
+                    <td>{{ rev.ACCOUNT.NAME }}</td>
+                    <td>{{ rev.SCORE }}</td>
+                    <td>{{ rev.COMMENT }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div> <!-- /container -->
+{% endblock %}

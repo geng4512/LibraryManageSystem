@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}我借的书{% endblock %}
+{% block content %}
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th> 图书名 </th>
+                <th>  作者  </th>
+                <th>  ISBN  </th>
+                <th>截止日期</th>
+            </tr>
+            </thead>
+            {%for book in booklist%}
+                <tr>
+                    <td>{{ book.ISBN.NAME }}</td>
+                    <td>{{ book.ISBN.AUTHOR }}</td>
+                    <td>{{ book.ISBN.ISBN }}</td>
+                    <td>{{ book.DEADLINE }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div> <!-- /container -->
+{% endblock %}
